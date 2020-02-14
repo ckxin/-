@@ -1,22 +1,22 @@
-# electron-learn
+# 表白神器
 
-> An electron-vue project
-
-#### Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:9080
-npm run dev
-
-# build electron application for production
-npm run build
-
-
+> 基于Electron-Vue的表白神器
+### 1.简介
+&nbsp;&nbsp;这是一款基于Electron-Vue的桌面应用程序。  
+&nbsp;&nbsp;前年一个曾经有一个很火的表白神器，当时我用Qt写了一个，奈何不会打包环境，只能在自己电脑应用，学会Electron后忍不住就又写了一个。  
+&nbsp;&nbsp;该应用安装后打开是一个窗口，上面显示**你喜欢我吗？**，并有一个**关闭**按钮，一个**不喜欢**按钮和一个**喜欢**按钮。点击**关闭**按钮，窗口会“逃跑”，**不喜欢**按钮被禁用无法点击，由于默认关闭方法被禁止，因此在任务栏右键关闭也无法关闭，故而只能点击**喜欢**按钮关闭窗口。
+### 2.程序安装与卸载
+&nbsp;&nbsp;**表白神器 Setup 0.0.1.exe**为打包出来的安装程序，直接下载安装即可。卸载时找到程序安装文件夹，有一个**Uninstall 表白神器.exe**，双击即可卸载程序。  
+&nbsp;&nbsp;**表白神器.zip**为打包出来的绿色免安装文件夹压缩文件，将其下载解压到一个文件夹，双击可执行程序即可。此方式不需要卸载，直接删除整个文件夹即可。
+### 3.修改与重新打包
+&nbsp;&nbsp;你可以对提问文字进行修改，选项内容也可修改，比如改成“你是猪吗？”“不是”“是”等。这些内容均在src/renderer/components/Content.vue文件中进行修改，我已做了注释。
+&nbsp;&nbsp;修改完成后需重新进行打包，打包完成你就可以把生成的安装文件或把绿色免安装文件夹压缩一下发给其他人进行体验啦。  
+*注：打包会在 build/ 文件夹下生成安装文件和可直接执行程序的文件夹(若想免除安装直接执行，此文件夹内所有东西都需要）*
+     
+```
+npm install //安装所需包文件，这一步无论是预览还是打包都是必须的
+npm run dev //开发者模式，可以在本地打开此应用预览，适用于边修改边预览
+npm run build //打包，适用于直接打包出安装程序
 ```
 
----
-
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+**注意：当你修改源码后，打包或预览前一定要使用npm install安装所需包文件**
